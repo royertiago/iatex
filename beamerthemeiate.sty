@@ -2,11 +2,9 @@
 
 \RequirePackage{tikz}
 
-\definecolor{iatered}{HTML}{B0100B}
-\definecolor{iategray}{HTML}{403937}
-
 \DeclareOptionBeamer{nolowerbar}
 {\setbeamertemplate{footline}[default]}
+
 \DeclareOptionBeamer{iatelowerbar}{
     \setbeamertemplate{footline}{
         \begin{tikzpicture}
@@ -28,6 +26,10 @@
 \useoutertheme{infolines}
 \usecolortheme{iate}
 
+% Precisamos processar as opções apenas agora para que o tema infolines
+% não sobrescreva nossa definição de footline.
+% (Também precisamos ter acesso a iategray e iatered,
+% definidos em beamercolorthemeiate.
 \ProcessOptionsBeamer
 
 \mode
