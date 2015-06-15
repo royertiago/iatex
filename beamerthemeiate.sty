@@ -19,6 +19,24 @@
         \end{tikzpicture}
     }
 }
+\DeclareOptionBeamer{iateheadline}{
+    \setbeamertemplate{headline}{
+        \begin{tikzpicture}
+            \shade[left color=iategray, right color=iatered]
+                (0, 0) rectangle (\paperwidth, 0.4cm);
+            \node[anchor=east, align=right] at (0.5\paperwidth, 0.2cm) {
+                \textcolor{white}{
+                    \insertsectionhead\hspace*{3ex}
+                }
+            };
+            \node[anchor=west, align=left] at (0.5\paperwidth, 0.2cm) {
+                \textcolor{white}{
+                    \hspace*{3ex}\insertsubsectionhead
+                }
+            };
+        \end{tikzpicture}
+    }
+}
 
 \mode<presentation>
 
