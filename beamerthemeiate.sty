@@ -1,7 +1,26 @@
 \ProvidesPackage{beamerthemeiate}[2015/06/15 Tema do IATE para o Beamer]
 
+\RequirePackage{tikz}
+
+\definecolor{iatered}{HTML}{B0100B}
+\definecolor{iategray}{HTML}{403937}
+
 \DeclareOptionBeamer{nolowerbar}
 {\setbeamertemplate{footline}[default]}
+\DeclareOptionBeamer{iatelowerbar}{
+    \setbeamertemplate{footline}{
+        \begin{tikzpicture}
+            \shade[left color=iategray, right color=iatered]
+                (0, 0) rectangle (\paperwidth, 0.4cm);
+            \node[anchor=east,align=right] at (\paperwidth, 0.2cm) {
+                \textcolor{white}{
+                    \insertframenumber{} / \inserttotalframenumber
+                    \hspace*{2ex}
+                }
+            };
+        \end{tikzpicture}
+    }
+}
 
 \mode<presentation>
 
