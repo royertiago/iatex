@@ -1,10 +1,15 @@
-\ProvidesPackage{beamerthemeiate}[2015/06/14 Tema do IATE para o Beamer]
+\ProvidesPackage{beamerthemeiate}[2015/06/15 Tema do IATE para o Beamer]
+
+\DeclareOptionBeamer{nolowerbar}
+{\setbeamertemplate{footline}[default]}
 
 \mode<presentation>
 
 \useinnertheme{rounded}
 \useoutertheme{infolines}
 \usecolortheme{iate}
+
+\ProcessOptionsBeamer
 
 \mode
 <all>
