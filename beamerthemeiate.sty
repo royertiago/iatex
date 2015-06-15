@@ -2,10 +2,10 @@
 
 \RequirePackage{tikz}
 
-\DeclareOptionBeamer{nolowerbar}
+\DeclareOptionBeamer{nofootline}
 {\setbeamertemplate{footline}[default]}
 
-\DeclareOptionBeamer{iatelowerbar}{
+\DeclareOptionBeamer{iatefootline}{
     \setbeamertemplate{footline}{
         \begin{tikzpicture}
             \shade[left color=iategray, right color=iatered]
