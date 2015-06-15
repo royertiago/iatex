@@ -1,6 +1,7 @@
 files = \
 	beamercolorthemeiate.sty \
 	beamercolorthemewhiterose.sty \
+	beamerouterthemeiate.sty \
 	beamerthemeiate.sty \
 	brasao-ufsc.pdf \
 	logo-iate.pdf \
