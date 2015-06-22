@@ -8,15 +8,53 @@
 \usecolortheme{iate}
 \useoutertheme{iate}
 
-\mode
-<all>
+\setbeamertemplate{title page}{
+    % Modificado de beamerinnerthemedefault
+    % A principal diferença é que a data está circundada pelo brasão da UFSC
+    % e pelo logotipo do IATE.
+    % Poderíamos ter resolvido o problema com o comando titlegraphic;
+    % entretanto, se \title, \author e \institute forem muito extensos,
+    % os logotipos podem ficar "cortados" embaixo.
+    % Portanto, optei por alinhá-los com a data.
+    \vfill
+    \begingroup
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center]{title}
+            \usebeamerfont{title}\inserttitle\par
+            \ifx\insertsubtitle\@empty\else\vskip0.25em\fi
+            {
+                \usebeamerfont{subtitle}
+                \usebeamercolor[fg]{subtitle}
+                \insertsubtitle\par
+            }
+        \end{beamercolorbox}
 
-\titlegraphic{
-    \hspace*{\fill}
-    \includegraphics[width=2.2cm]{brasao-ufsc}
-    \hspace*{\fill}
-    \includegraphics[width=2cm]{logo-iate}
-    \hspace*{\fill}
+        \begin{beamercolorbox}[sep=8pt,center]{author}
+            \usebeamerfont{author}\insertauthor
+        \end{beamercolorbox}
+
+        \begin{beamercolorbox}[sep=8pt,center]{institute}
+            \usebeamerfont{institute}\insertinstitute
+        \end{beamercolorbox}
+
+        \begin{beamercolorbox}{date}
+            \hspace*{\fill}
+            \parbox{2.2cm}{
+                \includegraphics[width=2.2cm]{brasao-ufsc}
+            }
+            \hspace*{\fill}
+            \usebeamerfont{date}\insertdate
+            \hspace*{\fill}
+            \parbox{2cm}{
+                \includegraphics[width=2cm]{logo-iate}
+            }
+            \hspace*{\fill}
+        \end{beamercolorbox}
+    \endgroup
+    \vfill
 }
 
 \beamertemplatenavigationsymbolsempty
+
+\mode
+<all>
